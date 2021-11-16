@@ -1,0 +1,16 @@
+SELECT productName FROM products
+WHERE productCode = 'S24_3856'
+
+
+SELECT AVG(buyPrice) FROM products
+
+
+SELECT COUNT(*) from products
+WHERE productName LIKE '%Ford%'
+
+
+SELECT max(buyPrice) AS maxPrice FROM products
+
+
+SELECT count(*) FROM products
+WHERE productline = 'ships'

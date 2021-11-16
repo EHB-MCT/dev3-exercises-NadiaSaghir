@@ -1,0 +1,15 @@
+SELECT COUNT(*) from orders
+WHERE customerNumber = '328'
+
+SELECT COUNT(*) from customers
+LEFT JOIN orders ON orders.customerNumber = customers.customerNumber
+WHERE contactLastName = 'Young' and contactFirstName = 'Julie'
+
+SELECT COUNT(*) from customers
+Where country = 'USA' AND creditLimit = '0'
+
+SELECT customers.customerName, AVG(amount) AS average FROM payments
+LEFT JOIN customers ON customers.customerNumber = payments.customerNumber
+GROUP BY payments.customerNumber
+order BY average DESC
+LIMIT 1

@@ -1,0 +1,3 @@
+SELECT SUM(paymentDate) FROM payments
+LEFT JOIN customers on customers.customerNumber = payments.customerNumber
+WHERE customers.contactLastName = 'Brown' AND customers.contactFirstName = 'William' AND paymentDate LIKE '2004%'

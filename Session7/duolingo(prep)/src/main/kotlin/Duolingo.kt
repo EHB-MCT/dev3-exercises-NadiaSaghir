@@ -1,11 +1,12 @@
-class Duolingo {
-    val words = mutableListOf<Word>(
-        Word("nain de jardin", "tuinkabouter", "fr"),
-        Word("canette", "blikje", "fr")
-    )
+class Duolingo (val roundSize: Int = 5, val language: String = "fr"){
+   val wordDeck = WordDeck()
+
+    init {
+        wordDeck.filterByLanguage(language)
+    }
 
     fun play() {
-        val currentWords = words.shuffled().take(5).toMutableSet()
+        val currentWords = wordDeck.words.shuffled().take(roundSize).toMutableSet()
         println(currentWords.count())
 
         while (currentWords.isNotEmpty()) {
